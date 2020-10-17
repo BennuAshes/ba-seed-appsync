@@ -1,0 +1,42 @@
+type Query {
+    hello: Hello
+    todos: [Todo]
+}
+type Hello {
+    world: SomeType
+    data: String
+}
+type SomeType {
+    fancyData: String
+}
+type Todo {
+    id: String!
+    name: String
+    description: String
+    isCompleted: Boolean
+    dateUpdated: String
+    dateCreated: String
+}
+
+input AddTodoInput {
+    name: String!
+    description: String!
+    isCompleted: Boolean
+}
+
+input UpdateTodoInput {
+    id: String!
+    name: String
+    description: String
+    isCompleted: Boolean
+}
+
+type Mutation {
+    addTodo(addTodo: AddTodoInput!): Todo
+    updateTodo(updateTodo: UpdateTodoInput!): Todo
+}
+
+schema {
+    query: Query,
+    mutation: Mutation
+}

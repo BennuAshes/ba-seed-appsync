@@ -1,0 +1,23 @@
+{
+  "name": "sl-appsync-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-appsync-plugin": "^1.4.0",
+    "serverless-appsync-simulator": "^0.7.0",
+    "serverless-offline": "^6.7.0",
+    "serverless-prune-plugin": "^1.4.3",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "deploy": "tsc && serverless deploy --accountId 0000000000",
+    "noDeploy": "tsc && serverless deploy --noDeploy --accountId 0000000000",
+    "remove": "serverless remove --accountId 0000000000"
+  },
+  "author": "",
+  "license": "ISC"
+}

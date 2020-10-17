@@ -1,0 +1,15 @@
+{
+    "version" : "2017-02-28",
+    "operation" : "PutItem",
+    "key" : {
+        "id" : $util.dynamodb.toDynamoDBJson($util.autoId())
+    },
+    "attributeValues" : {
+        "name" : $util.dynamodb.toDynamoDBJson($context.arguments.addTodo.name),
+        "description" : $util.dynamodb.toDynamoDBJson($context.arguments.addTodo.description),
+        "isCompleted" : $util.dynamodb.toDynamoDBJson($context.arguments.addTodo.isCompleted),       
+        "dateCreated" : { "N" : $util.time.nowEpochMilliSeconds() },
+        "dateUpdated" : { "N" : $util.time.nowEpochMilliSeconds() },
+        "version" : { "N" : 1 }
+    }
+}
